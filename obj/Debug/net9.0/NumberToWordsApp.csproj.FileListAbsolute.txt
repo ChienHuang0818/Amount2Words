@@ -975,3 +975,4 @@
 /Users/chienhuangsarah/Desktop/Amount2Words/obj/Debug/net9.0/NumberToWordsApp.pdb
 /Users/chienhuangsarah/Desktop/Amount2Words/obj/Debug/net9.0/NumberToWordsApp.genruntimeconfig.cache
 /Users/chienhuangsarah/Desktop/Amount2Words/obj/Debug/net9.0/ref/NumberToWordsApp.dll
+/Users/chienhuangsarah/Desktop/Amount2Words/obj/Debug/net9.0/NumberToWordsApp.sourcelink.json
