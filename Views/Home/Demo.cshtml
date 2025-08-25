@@ -1,0 +1,210 @@
+@{
+    ViewData["Title"] = "Demo";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Number to Words Converter</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="light-mode">
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo">Number to Words Converter</div>
+        <div class="nav-links">
+            <a href="/Convert">Home</a>
+            <a href="/Home/About">About</a>
+            <a href="/Home/Demo">Demo</a>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="demo-container">
+            <h1>📊 Demo Showcase</h1>
+            <p class="demo-intro">Explore the capabilities of our Number to Words Converter through these visual demonstrations.</p>
+
+            <!-- features -->
+            <div class="demo-features">
+                <h2>🎯 Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>Currency Format</h3>
+                        <p>Automatically formats numbers as dollars and cents</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔢</div>
+                        <h3>Large Numbers</h3>
+                        <p>Handles numbers up to millions with proper formatting</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-time</h3>
+                        <p>Instant conversion as you type</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Responsive</h3>
+                        <p>Works perfectly on all devices</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- converter demo -->
+            <div class="demo-converter">
+                <h2>🔧 Converter Interface</h2>
+                <p class="converter-description">This is how the main converter looks and works.</p>
+                
+                <div class="converter-demo">
+                    <div class="converter-form">
+                        <input type="text" value="123.45" readonly />
+                        <button>Convert</button>
+                    </div>
+                    <div class="result-box">
+                        <span class="result-text">ONE HUNDRED AND TWENTY-THREE DOLLARS AND FORTY-FIVE CENTS</span>
+                        <button class="copy-btn">📋</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- examples -->
+            <div class="demo-examples">
+                <h2>📚 Conversion Examples</h2>
+                <p class="examples-description">See how different types of numbers are converted into words.</p>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-category">Small Amount</div>
+                        <div class="example-input">0.99</div>
+                        <div class="example-output">NINETY-NINE CENTS</div>
+                        <div class="example-explanation">Only cents, no dollars</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-category">Standard Amount</div>
+                        <div class="example-input">123.45</div>
+                        <div class="example-output">ONE HUNDRED AND TWENTY-THREE DOLLARS AND FORTY-FIVE CENTS</div>
+                        <div class="example-explanation">Both dollars and cents</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-category">Round Number</div>
+                        <div class="example-input">1000.00</div>
+                        <div class="example-output">ONE THOUSAND DOLLARS</div>
+                        <div class="example-explanation">Whole number, no cents</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-category">Large Amount</div>
+                        <div class="example-input">1,234,567.89</div>
+                        <div class="example-output">ONE MILLION TWO HUNDRED THIRTY-FOUR THOUSAND FIVE HUNDRED SIXTY-SEVEN DOLLARS AND EIGHTY-NINE CENTS</div>
+                        <div class="example-explanation">Millions with proper formatting</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-category">Minimum Amount</div>
+                        <div class="example-input">0.01</div>
+                        <div class="example-output">ONE CENT</div>
+                        <div class="example-explanation">Smallest possible amount</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-category">Maximum Amount</div>
+                        <div class="example-input">999,999.99</div>
+                        <div class="example-output">NINE HUNDRED NINETY-NINE THOUSAND NINE HUNDRED NINETY-NINE DOLLARS AND NINETY-NINE CENTS</div>
+                        <div class="example-explanation">Large number with cents</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- special cases -->
+            <div class="demo-special">
+                <h2>📝 Special Cases</h2>
+                <p class="special-description">How the converter handles edge cases and special scenarios.</p>
+                <div class="special-cases">
+                    <div class="special-case">
+                        <h3>Zero Amount</h3>
+                        <div class="case-example">
+                            <span class="case-input">0.00</span>
+                            <span class="case-arrow">→</span>
+                            <span class="case-output">ZERO DOLLARS</span>
+                        </div>
+                        <p class="case-explanation">When the amount is zero, it displays "ZERO DOLLARS"</p>
+                    </div>
+                    <div class="special-case">
+                        <h3>Whole Numbers</h3>
+                        <div class="case-example">
+                            <span class="case-input">100</span>
+                            <span class="case-arrow">→</span>
+                            <span class="case-output">ONE HUNDRED DOLLARS</span>
+                        </div>
+                        <p class="case-explanation">No cents are shown when the amount is a whole number</p>
+                    </div>
+                    <div class="special-case">
+                        <h3>Only Cents</h3>
+                        <div class="case-example">
+                            <span class="case-input">0.50</span>
+                            <span class="case-arrow">→</span>
+                            <span class="case-output">FIFTY CENTS</span>
+                        </div>
+                        <p class="case-explanation">When less than $1, only cents are displayed</p>
+                    </div>
+                    <div class="special-case">
+                        <h3>Negative Numbers</h3>
+                        <div class="case-example">
+                            <span class="case-input">-123.45</span>
+                            <span class="case-arrow">→</span>
+                            <span class="case-output">MINUS ONE HUNDRED AND TWENTY-THREE DOLLARS AND FORTY-FIVE CENTS</span>
+                        </div>
+                        <p class="case-explanation">Negative amounts are prefixed with "MINUS"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tips -->
+            <div class="demo-tips">
+                <h2>💡 Pro Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🎯</div>
+                        <h3>Best Practices</h3>
+                        <ul>
+                            <li>Use decimal numbers (e.g., 123.45)</li>
+                            <li>Large numbers are supported (up to millions)</li>
+                            <li>Input validation ensures accuracy</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">⚡</div>
+                        <h3>Quick Actions</h3>
+                        <ul>
+                            <li>Use the copy button to copy results</li>
+                            <li>Press Enter to convert instantly</li>
+                            <li>Try different number formats</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🔧</div>
+                        <h3>Advanced Features</h3>
+                        <ul>
+                            <li>Works with negative numbers</li>
+                            <li>Handles edge cases automatically</li>
+                            <li>Responsive design for all devices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- cta -->
+            <div class="demo-cta">
+                <h2>🚀 Ready to Start Converting?</h2>
+                <p>Now that you've seen the demo, head to the main converter and start transforming your numbers into professional word format!</p>
+                <div class="cta-buttons">
+                    <a href="/Convert" class="cta-button primary">Go to Main Converter</a>
+                    <a href="/Home/About" class="cta-button secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+@model NumberToWordsApp.Models.ConvertViewModel
+@{
+    ViewData["Title"] = "Number to Words Converter";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="light-mode">
+    <header class="navbar">
+        <div class="logo">Amount2Words</div>
+        <div class="nav-links">
+          <a href="/Home/About">About</a>
+          <a href="/Home/Demo">Demo</a>
+          <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h1>Number to Words Converter</h1>
+
+        @if (Model?.HasError == true)
+        {
+            <div class="error-box">
+                <span class="error-text">@Model?.ErrorMessage</span>
+            </div>
+        }
+        
+
+        <form method="post" class="converter-form">
+            <input type="text" name="NumberInput" value="@Model?.NumberInput" placeholder="Enter a number" required />
+            <button type="submit">Convert</button>
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model?.Result) && Model?.HasError != true)
+        {
+            <div class="result-box">
+                <span class="result-text">@Model?.Result</span>
+                <button class="copy-btn" onclick="copyResult()">📋</button>
+            </div>
+        }
+    </main>
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>

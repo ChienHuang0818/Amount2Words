@@ -1,0 +1,357 @@
+@{
+    ViewData["Title"] = "About - Number to Words Converter";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body class="light-mode">
+    <header class="navbar">
+        <div class="logo">Amount2Words</div>
+        <div class="nav-links">
+            <a href="/Convert">Home</a>
+            <a href="/Home/About" class="active">About</a>
+            <a href="/Home/Demo">Demo</a>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="about-container">
+            <h1>About Number to Words Converter</h1>
+            
+            <div class="about-section">
+                <h2>🎯 What is this tool?</h2>
+                <p>
+                    The Number to Words Converter is a powerful web application that transforms numerical values into their written word equivalents. 
+                    It's designed to handle decimal numbers and convert them into proper currency format with dollars and cents.
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h2>✨ Features</h2>
+                <ul class="feature-list">
+                    <li><strong>Decimal Support:</strong> Handles numbers with decimal points (e.g., 123.45)</li>
+                    <li><strong>Currency Format:</strong> Converts to proper dollar and cent format</li>
+                    <li><strong>Large Numbers:</strong> Supports numbers up to millions</li>
+                    <li><strong>Real-time Conversion:</strong> Instant results as you type</li>
+                    <li><strong>Copy Function:</strong> Easy one-click copying of results</li>
+                    <li><strong>Dark Mode:</strong> Toggle between light and dark themes</li>
+                    <li><strong>Responsive Design:</strong> Works on all devices</li>
+                </ul>
+            </div>
+
+            <div class="about-section">
+                <h2>📝 How to use</h2>
+                <div class="usage-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Enter a number</h3>
+                            <p>Type any number in the input field. You can use decimal numbers like 123.45</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Click Convert</h3>
+                            <p>Press the "Convert" button to transform your number into words</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Copy the result</h3>
+                            <p>Use the copy button (📋) to copy the result to your clipboard</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>💡 Examples</h2>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-input">123.45</div>
+                        <div class="example-output">ONE HUNDRED AND TWENTY-THREE DOLLARS AND FORTY-FIVE CENTS</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-input">1000.00</div>
+                        <div class="example-output">ONE THOUSAND DOLLARS</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-input">0.99</div>
+                        <div class="example-output">NINETY-NINE CENTS</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>🏗️ Software Architecture & Design Decisions</h2>
+                <p>
+                    This project demonstrates modern software engineering principles and thoughtful technology choices. 
+                    Here's why we chose this approach:
+                </p>
+                
+                <h3>🎯 Why ASP.NET Core MVC?</h3>
+                <div class="design-decisions">
+                    <div class="decision-item">
+                        <h4>🔧 Robust Framework</h4>
+                        <p>ASP.NET Core provides a mature, enterprise-grade framework with built-in security, performance optimization, and extensive tooling support.</p>
+                    </div>
+                    <div class="decision-item">
+                        <h4>⚡ High Performance</h4>
+                        <p>Cross-platform, high-performance framework that can handle concurrent requests efficiently with minimal resource usage.</p>
+                    </div>
+                    <div class="decision-item">
+                        <h4>🛡️ Security First</h4>
+                        <p>Built-in security features including request validation, CSRF protection, and secure defaults out of the box.</p>
+                    </div>
+                    <div class="decision-item">
+                        <h4>🔍 Clear Separation of Concerns</h4>
+                        <p>MVC pattern provides clean separation between data logic (Model), presentation (View), and business logic (Controller).</p>
+                    </div>
+                </div>
+
+                <h3>💻 Why C# Instead of Other Languages?</h3>
+                <div class="language-comparison">
+                    <div class="comparison-item">
+                        <h4>vs JavaScript/Node.js</h4>
+                        <ul>
+                            <li><strong>Type Safety:</strong> C# provides compile-time type checking, reducing runtime errors</li>
+                            <li><strong>Performance:</strong> Better performance for CPU-intensive operations like number processing</li>
+                            <li><strong>Maintainability:</strong> Strong typing makes code more maintainable and self-documenting</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>vs Python/Django</h4>
+                        <ul>
+                            <li><strong>Performance:</strong> C# is generally faster for web applications</li>
+                            <li><strong>Enterprise Integration:</strong> Better integration with Windows ecosystem and enterprise tools</li>
+                            <li><strong>Scalability:</strong> Better suited for high-traffic applications</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item">
+                        <h4>vs Java/Spring</h4>
+                        <ul>
+                            <li><strong>Developer Experience:</strong> More modern syntax and better tooling</li>
+                            <li><strong>Performance:</strong> Generally faster startup times and lower memory usage</li>
+                            <li><strong>Cross-platform:</strong> Better cross-platform support with .NET Core</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>🏛️ Architecture Design Principles</h3>
+                <div class="architecture-principles">
+                    <div class="principle-item">
+                        <h4>🎯 Single Responsibility Principle</h4>
+                        <p>Each class has one reason to change. The <code>NumberToWordsConverter</code> handles only conversion logic, while <code>ConvertController</code> manages HTTP requests.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4>🔄 Dependency Inversion</h4>
+                        <p>High-level modules don't depend on low-level modules. Both depend on abstractions, making the system more flexible and testable.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4>📦 Separation of Concerns</h4>
+                        <p>Clear boundaries between data models, business logic, and presentation layers ensure maintainable and scalable code.</p>
+                    </div>
+                    <div class="principle-item">
+                        <h4>🧪 Testability</h4>
+                        <p>Architecture designed for easy unit testing with isolated components and clear interfaces.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>📊 System Flow Diagram</h2>
+                <p class="flow-description">
+                    The following diagram illustrates the complete flow of our number-to-words conversion system, 
+                    showing how user input is processed through validation, conversion, and output formatting.
+                </p>
+                
+                <div class="flow-diagram">
+                    <div class="diagram-container">
+                        <div class="flow-step start">
+                            <div class="step-icon">🚀</div>
+                            <h4>Start</h4>
+                            <p>User enters a number</p>
+                        </div>
+                        
+                        <div class="flow-arrow">↓</div>
+                        
+                        <div class="flow-step input">
+                            <div class="step-icon">📝</div>
+                            <h4>Input Validation</h4>
+                            <p>TryParse decimal</p>
+                        </div>
+                        
+                        <div class="flow-arrow">↓</div>
+                        
+                        <div class="flow-decision">
+                            <div class="decision-icon">❓</div>
+                            <h4>Valid Number?</h4>
+                        </div>
+                        
+                        <div class="flow-branches">
+                            <div class="branch no">
+                                <div class="branch-arrow">← No</div>
+                                <div class="flow-step error">
+                                    <div class="step-icon">⚠️</div>
+                                    <h4>Show Error</h4>
+                                    <p>Display error message</p>
+                                </div>
+                            </div>
+                            
+                            <div class="branch yes">
+                                <div class="branch-arrow">→ Yes</div>
+                                <div class="flow-step process">
+                                    <div class="step-icon">🔧</div>
+                                    <h4>Split Amount</h4>
+                                    <p>Separate dollars & cents</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-arrow">↓</div>
+                        
+                        <div class="flow-step convert">
+                            <div class="step-icon">🔄</div>
+                            <h4>Convert to Words</h4>
+                            <p>Process dollars & cents</p>
+                        </div>
+                        
+                        <div class="flow-arrow">↓</div>
+                        
+                        <div class="flow-decision">
+                            <div class="decision-icon">❓</div>
+                            <h4>Cents == 0?</h4>
+                        </div>
+                        
+                        <div class="flow-branches">
+                            <div class="branch yes">
+                                <div class="branch-arrow">→ Yes</div>
+                                <div class="flow-step result">
+                                    <div class="step-icon">💵</div>
+                                    <h4>Return Dollars Only</h4>
+                                    <p>"XXX DOLLARS"</p>
+                                </div>
+                            </div>
+                            
+                            <div class="branch no">
+                                <div class="branch-arrow">→ No</div>
+                                <div class="flow-step result">
+                                    <div class="step-icon">💰</div>
+                                    <h4>Return Full Amount</h4>
+                                    <p>"XXX DOLLARS AND YYY CENTS"</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-arrow">↓</div>
+                        
+                        <div class="flow-step end">
+                            <div class="step-icon">✅</div>
+                            <h4>End</h4>
+                            <p>Display result to user</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flow-explanation">
+                    <h3>🔍 Flow Explanation</h3>
+                    <div class="explanation-grid">
+                        <div class="explanation-item">
+                            <h4>1. Input Validation</h4>
+                            <p>Uses <code>decimal.TryParse()</code> to validate user input and ensure it's a valid number.</p>
+                        </div>
+                        <div class="explanation-item">
+                            <h4>2. Amount Processing</h4>
+                            <p>Splits the decimal into integer dollars and cents components for separate processing.</p>
+                        </div>
+                        <div class="explanation-item">
+                            <h4>3. Word Conversion</h4>
+                            <p>Converts each component to its word equivalent using recursive algorithms.</p>
+                        </div>
+                        <div class="explanation-item">
+                            <h4>4. Formatting Logic</h4>
+                            <p>Applies business rules to format the output correctly (e.g., "DOLLARS" vs "DOLLARS AND CENTS").</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>🛠️ Technology Stack</h2>
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <h3>Backend</h3>
+                        <ul class="tech-list">
+                            <li><strong>Framework:</strong> ASP.NET Core 9.0</li>
+                            <li><strong>Language:</strong> C# 12.0</li>
+                            <li><strong>Pattern:</strong> Model-View-Controller (MVC)</li>
+                            <li><strong>Architecture:</strong> Layered Architecture</li>
+                        </ul>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Frontend</h3>
+                        <ul class="tech-list">
+                            <li><strong>Markup:</strong> HTML5 with Razor Views</li>
+                            <li><strong>Styling:</strong> CSS3 with Custom Design System</li>
+                            <li><strong>Interactivity:</strong> Vanilla JavaScript</li>
+                            <li><strong>Responsive:</strong> Mobile-First Design</li>
+                        </ul>
+                    </div>
+                    <div class="tech-category">
+                        <h3>Development</h3>
+                        <ul class="tech-list">
+                            <li><strong>IDE:</strong> Visual Studio / VS Code</li>
+                            <li><strong>Package Manager:</strong> NuGet</li>
+                            <li><strong>Version Control:</strong> Git</li>
+                            <li><strong>Deployment:</strong> Cross-platform (.NET Core)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>🎨 Design Philosophy</h2>
+                <p>
+                    Our design philosophy centers around creating software that is not only functional but also maintainable, 
+                    scalable, and developer-friendly. We believe in:
+                </p>
+                <div class="philosophy-points">
+                    <div class="philosophy-item">
+                        <h4>🧹 Clean Code</h4>
+                        <p>Writing code that is readable, self-documenting, and follows established conventions and best practices.</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>🔧 Maintainability</h4>
+                        <p>Designing systems that are easy to modify, extend, and debug as requirements evolve.</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>📈 Scalability</h4>
+                        <p>Building architecture that can handle growth in users, data, and functionality without major refactoring.</p>
+                    </div>
+                    <div class="philosophy-item">
+                        <h4>🎯 User Experience</h4>
+                        <p>Creating interfaces that are intuitive, accessible, and provide value to end users.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>🚀 Ready to try it?</h2>
+                <p>Start converting your numbers to words now!</p>
+                <a href="/Convert" class="cta-button">Start Converting</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>
