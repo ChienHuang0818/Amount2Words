@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NumberToWordsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a2912cf01b5197ed6edaab1d021b1e76f36f2ad")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f6d5ec8dd45a922f9377011ca1d89faa2d2eee4")]
 [assembly: System.Reflection.AssemblyProductAttribute("NumberToWordsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NumberToWordsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
